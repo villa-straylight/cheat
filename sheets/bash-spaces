@@ -1,0 +1,12 @@
+# Example
+
+SAVEIFS=$IFS  
+IFS=$(echo -en "\n\b")  
+<Whatever weird crap you arere trying to do>
+IFS=$SAVEIFS 
+
+# Explanation
+- $IFS is the Internal Field Seprator
+- Setting it to \n\b sets it to line end rather than space
+- We save the current variable and then set it back at the end
+- This is so we do not blow anything up
