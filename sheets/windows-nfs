@@ -1,0 +1,17 @@
+# Powershell
+Run Powershell as admin
+
+# Install NFS services
+Enable-WindowsOptionalFeature -FeatureName ServicesForNFS-ClientOnly, ClientForNFS-Infrastructure -Online -NoRestart
+
+# Configure
+Get UID from [IDM](http://oakham.seitel.pri)
+
+## Add registry entry for user
+- Replace <UID> with user's UID
+- For a shared machine use 1574000034 as the UID
+
+New-ItemProperty HKLM:\SOFTWARE\Microsoft\ClientForNFS\CurrentVersion\Default -Name AnonymousUID -Value <UID> -PropertyType "DWord"  
+
+## Add registry entry for group
+New-ItemProperty HKLM:\SOFTWARE\Microsoft\ClientForNFS\CurrentVersion\Default -Name AnonymousGID -Value 502 -PropertyType "DWord" 
