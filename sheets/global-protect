@@ -1,0 +1,10 @@
+# PLAP at Login
+
+## Run cmd as admin then these commands
+- NOTE: The command does not return any output even on failure
+
+cd "C:\Program Files\Palo Alto Networks\GlobalProtect" 
+
+PanGPS.exe -registerplap 
+
+## Reboot the machine
